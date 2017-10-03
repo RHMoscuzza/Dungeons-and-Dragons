@@ -292,16 +292,3 @@ $(function() {
         }
     });
 });
-// 1. On submit take user's choices and store them in a variable for later.
-// 2. When the user makes a height selection, store it in a variable height. 
-// 3. When they make an age choice store it in a variable called age
-// 4. Store terrain choice in a variable called terrain. 
-// 5. Create a new array that will store possible race choices
-// 6. Determine which objects are going to be stored as possible choices
-
-// 1. For the classes form, same first step.
-// 2. When the user makes an ability selection store in variable called ability
-// 3. Next do combat type in a variable called combatType
-// 4. Finally add a variable with the hit die choice. 
-// 5. Match the values to the correct object in the class array. 
-// 6. Spit out the ideal class. 
