@@ -1,0 +1,182 @@
+<!-- Icons provided by The Noun Project and it's contributors: Emir Palavan, Alina Oleynik, Mark Caron, Henry Ryder, Lane F. Kinkade, Milan Gladiš, Darren Northcott, Nikolai Berda, Bonegolem, Arthur Shlain, Hamish, Gagana, Christoper, Rachel Siao, birdie brain, SBTS, ic-mihrak propaganda design collective, Alina Oleynik, andriwidodo, Bakunetsu Kaito. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>D &amp; D</title>
+	<link rel="stylesheet" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cardo|Cinzel+Decorative" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://use.fontawesome.com/5c5116fcda.js"></script>
+</head>
+<body>
+	
+	<header>
+		<div class="wrapper headerContent">
+			<h1>Dungeons &amp; Dragons</h1>
+			<h1>Character Builder</h1>
+			<h3>Answer our quiz questions to find out what class and race you should play as in your next campaign!</h3>
+			<div class="startBox">
+				<a href="#forms" class="startLink"><input type="submit" class="button startButton" value="Get Started!"></a>
+				<div class="axeBox">
+					<img src="images/axes.svg" alt="A picture of two axes crossing together behind the get started button. Each has a red flag hanging close to the blade." class="axes">
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="forms" id="forms">
+			<div class="wrapper">
+				<form action="" class="race" id="raceForm">
+					<h4>Race Quiz</h4>
+					<h5>Please select one option from each section</h5>
+					<fieldset class="height">
+						<p>Would you prefer being...</p>
+						<div class="optionBox">
+							<div class="option">
+								<input type="radio" name="height" id="small" value="small" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="small">Small</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="height" id="tall" value="tall" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="tall">Tall</label>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset class="age">
+						<p>Would you rather...</p>
+						<div class="optionBox">
+							<div class="option specialOption">
+								<input type="radio" name="age" id="immortal" value="immortal" class="dragonFix" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="immortal">Live forever</label>
+							</div>
+							<div class="option specialOption">
+								<input type="radio" name="age" id="mortal" value="mortal" class="dragonFix" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="mortal">Live for a short time</label>
+							</div>
+						</div><!-- /.optionBox -->
+					</fieldset>
+					<fieldset class="vacation">
+						<p>Where do you feel most at home?</p>
+						<div class="optionBox">
+							<div class="option">
+								<input type="radio" name="vacation" id="mountain" value="mountain" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="mountain">On a mountain</label>
+							</div> <!-- /.option -->
+							<div class="option">
+								<input type="radio" name="vacation" id="city" value="city" required >
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="city">In a big city</label>
+							</div> <!-- /.option -->
+							<div class="option">
+								<input type="radio" name="vacation" id="hell" value="hell" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="hell">In a volcano</label>
+							</div> <!-- /.option -->
+							<div class="option">
+								<input type="radio" name="vacation" id="heaven" value="heaven" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="heaven">In a forest</label>
+							</div> <!-- /.option -->
+							<div class="option">
+								<input type="radio" name="vacation" id="hometown" value="hometown" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="hometown">In a small town</label>
+							</div><!-- /.option -->
+						</div><!--/.optionBox-->
+						<div class="submit submitRace">
+							<a href="#classesForm"><input type="submit" value="Run my race!" class="button"></a>
+						</div>
+					</fieldset>
+				</form> <!-- /.race -->
+				<!-- <div class="raceResult" id="raceResult">
+				</div> -->
+				<form id="classesForm" class="stats">
+					<h4>Class Quiz</h4>
+					<h5>Please select one option from each section</h5>
+					<fieldset class="ability">
+						<p>Would you rather be...</p>
+						<div class="optionBox">
+							<div class="option">
+								<input type="radio" name="ability" id="wisdomIntelligence" value="wisdomIntelligence" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="wisdomIntelligence">The Tortoise</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ability" id="strengthDexterity" value="strengthDexterity" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="strengthDexterity">The Hare</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="ability" id="charisma" value="charisma" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="charisma">The Fox</label>
+							</div>
+						</div><!-- /.optionBox -->
+					</fieldset>
+					<fieldset class="combatType">
+						<p>Pick the hero you'd want to play as</p>
+						<div class="optionBox">
+							<div class="option">
+								<input type="radio" name="combatType" id="magic" value="magic" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="magic">Merlin</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="combatType" id="melee" value="melee" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="melee">King Arthur</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="combatType" id="range" value="range" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="range">Robin Hood</label>
+							</div>
+						</div> <!--/.optionBox -->
+					</fieldset>
+					<fieldset class="hitDie">
+						<p>Pick a number</p>
+						<div class="optionBox">
+							<div class="option">
+								<input type="radio" name="hitDie" id="d6" value="d6" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="d6">25</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="hitDie" id="d8" value="d8" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="d8">90</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="hitDie" id="d10" value="d10" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="d10">86</label>
+							</div>
+							<div class="option">
+								<input type="radio" name="hitDie" id="d12"	value="d12" required>
+								<img src="images/dragon-head.svg" alt="A dragon head representing a checked box" class="dragon">
+								<label for="d12">55</label>
+							</div>
+						</div><!-- /.optionBox -->
+						<div class="submit submitClass">
+							<a href="#statsResult"><input class="button" type="submit" value="Time for class!" class="button"></a>
+						</div>
+					</fieldset>
+				</form>
+				<section class="results">
+					<div class="raceResult" id="raceResult"></div>
+					<div class="statsResult" id="statsResult"></div>
+				</section>
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.forms -->
+	</main>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+	<script src="scripts/script.js"></script>
+</body>
+</html>
