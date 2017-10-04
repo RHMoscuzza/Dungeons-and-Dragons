@@ -82,7 +82,6 @@ form{
 /* fieldset styling begins here */
 fieldset{
 	border: none;
-		
 	padding: 2%;
 }
 .optionBox{
@@ -111,15 +110,20 @@ input[type='radio']:checked + img{
 	background-color: transparent;
 }
 label{
-	font-size: 1.6rem;
-	border: 2px solid #830303;
-    padding: 5px;
-    display: flex;
-    text-align: center;
+	display: block;
+	border: 1px solid #830303;
+	color: #000;
+	text-align: center;
+	padding: 20px;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 label:hover{
-	background: #830303;
-    color: #fff;
+	background: #fff;
+	border: 5px solid #fff;
+	color: #15181f; }
+
 }
 /* submit button styles */
 .button{
