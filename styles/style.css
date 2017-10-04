@@ -115,14 +115,15 @@ label{
 	color: #000;
 	text-align: center;
 	padding: 20px;
-	letter-spacing: 1px;
-	-webkit-transition: all 0.3s;
+	letter-spacing: 2px;
 	transition: all 0.3s;
+	font-size: 1.2rem;
 }
-label:hover{
-	background: #fff;
-	border: 5px solid #fff;
-	color: #15181f; }
+label:hover, .labelTwo{
+	background: #830303;
+	border: 1px solid #830303;
+	color: #fff;
+}
 
 }
 /* submit button styles */
