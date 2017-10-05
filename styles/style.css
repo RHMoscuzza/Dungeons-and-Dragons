@@ -102,12 +102,8 @@ fieldset{
 	bottom: 100%;
 	left: 47%;
 }
-input[type='radio']{
+input[type='checkbox']{
 	display: none;
-}
-input[type='radio']:checked + img{
-	display: block;
-	background-color: transparent;
 }
 label{
 	display: block;
@@ -119,12 +115,15 @@ label{
 	transition: all 0.3s;
 	font-size: 1.2rem;
 }
-label:hover, .labelTwo{
+label:hover{
 	background: #830303;
 	border: 1px solid #830303;
 	color: #fff;
 }
-
+.labelTwo{
+	background: #830303;
+	border: 1px solid #830303;
+	color: #fff;
 }
 /* submit button styles */
 .button{

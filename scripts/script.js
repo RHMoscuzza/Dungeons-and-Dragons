@@ -1,5 +1,3 @@
-console.log("This is still a work in progress.  Please excuse the messy code.")
-
 $(function() {
 
     var raceChoice = "";
@@ -195,7 +193,9 @@ $(function() {
     $('a').smoothScroll({
     
     });
-    
+    $("input").click(function(){
+        $("label").toggleClass("labelTwo");
+    });
     $('form.race a').on('click', function(e) {
         e.preventDefault();
         var height = $('input[name=height]:checked').val();	
