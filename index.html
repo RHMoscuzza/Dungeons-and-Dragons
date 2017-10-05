@@ -17,7 +17,7 @@
 			<h1>Character Builder</h1>
 			<h3>Answer our quiz questions to find out what class and race you should play as in your next campaign!</h3>
 			<div class="startBox">
-				<a href="#forms" class="startLink"><input type="submit" class="button startButton" value="Get Started!"></a>
+				<a href="#raceForm" class="startLink"><input type="submit" class="button startButton" value="Get Started!"></a>
 				<div class="axeBox">
 					<img src="images/axes.svg" alt="A picture of two axes crossing together behind the get started button. Each has a red flag hanging close to the blade." class="axes">
 				</div>
@@ -25,9 +25,9 @@
 		</div>
 	</header>
 	<main>
-		<section class="forms" id="forms">
+		<section class="forms" id="raceForm">
 			<div class="wrapper">
-				<form action="" class="race" id="raceForm">
+				<form action="" class="race">
 					<h4>Race Quiz</h4>
 					<h5>Please select one option from each section</h5>
 					<fieldset class="height">
@@ -85,7 +85,11 @@
 						</div>
 					</fieldset>
 				</form> <!-- /.race -->
-				<form id="classesForm" class="stats">
+			</div> <!-- /.wrapper -->
+		</section> <!-- /.forms -->
+		<section class="forms" id="classesForm">
+			<div class="wrapper">
+				<form class="stats">
 					<h4>Class Quiz</h4>
 					<h5>Please select one option from each section</h5>
 					<fieldset class="ability">
@@ -147,12 +151,12 @@
 						</div>
 					</fieldset>
 				</form>
-				<section class="results">
-					<div class="raceResult" id="raceResult"></div>
-					<div class="statsResult" id="statsResult"></div>
-				</section>
-			</div> <!-- /.wrapper -->
-		</section> <!-- /.forms -->
+			</div>
+		</section>
+		<section class="results">
+			<div class="raceResult" id="raceResult"></div>
+			<div class="statsResult" id="statsResult"></div>
+		</section>
 	</main>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
