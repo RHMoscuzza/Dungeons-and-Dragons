@@ -19,9 +19,10 @@ main{
 	background-size: 200px;
 }
 .wrapper{
-	width: 80%;
-	margin: 0 auto;
-	padding-top: 10%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 /* font styles */
@@ -82,6 +83,7 @@ form{
 	border-radius: 3rem;
 	box-shadow: inset 3px 7px 300px 31px rgba(218,165,32,0.66);
 	background-color: #FAFAD2;
+	width: 100%;
 }
 /* fieldset styling begins here */
 fieldset{
@@ -171,6 +173,7 @@ label:hover{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	height: 100vh;
 }
 .result{
 	background: url(../images/shield.svg);
