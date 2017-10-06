@@ -195,7 +195,7 @@ $(function() {
     });
 
     $(".toggle").on('click', function(e){
-        $(e.currentTarget).toggleClass(".labelTwo");
+        $(e.this).toggleClass(".labelTwo");
     });
     
     $('form.race a').on('click', function(e) {
