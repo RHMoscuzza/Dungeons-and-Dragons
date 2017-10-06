@@ -171,17 +171,18 @@ label:hover{
 /* styles for answer output */
 .results{
 	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 .result{
 	background: url(../images/shield.svg);
 	background-size: 500px;
-	width: 50%;
+	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 500px;	
+	height: 415px;	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

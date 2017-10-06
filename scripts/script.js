@@ -194,7 +194,7 @@ $(function() {
     
     });
 
-    $("input").click(function(){
+    $("checkbox").click(function(){
         $("label").toggleClass("labelTwo");
     });
     
