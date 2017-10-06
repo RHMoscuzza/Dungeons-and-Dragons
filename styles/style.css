@@ -121,16 +121,13 @@ label{
 	transition: all 0.3s;
 	font-size: 1.2rem;
 }
-label:hover{
+label:hover, .labelTwo{
 	background: #830303;
 	border: 1px solid #830303;
 	color: #fff;
 }
-.labelTwo{
-	background: #830303;
-	border: 1px solid #830303;
-	color: #fff;
-}
+
+
 /* submit button styles */
 .button{
 	font-family: 'Cinzel Decorative', cursive;
@@ -212,6 +209,10 @@ i{
 		margin: 0;
 		background-color: initial;
 	}
+	label, label:hover, .labelTwo{
+		padding: 5px;
+		text-align: center;
+	} 
 	.axeBox{
 		display: none;
 	}
@@ -225,6 +226,9 @@ i{
 @media (max-width: 480px) {
 	html{
 		font-size: 30%;
+	}
+	label{
+		font-size: 7px;
 	}
 	.headerContent {
     	position: relative;
