@@ -211,6 +211,7 @@ i{
 	}
 	label, label:hover, .labelTwo{
 		text-align: center;
+		padding: 5px;
 	} 
 	.axeBox{
 		display: none;
