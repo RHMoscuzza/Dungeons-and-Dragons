@@ -194,8 +194,8 @@ $(function() {
     
     });
 
-    $("checkbox").click(function(){
-        $("label").toggleClass("labelTwo");
+    $(".toggle").on('click', function(e){
+        $("option").toggleClass("labelTwo");
     });
     
     $('form.race a').on('click', function(e) {
