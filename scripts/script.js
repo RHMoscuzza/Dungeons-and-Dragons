@@ -2,6 +2,7 @@ $(function() {
 
     var raceChoice = "";
     var characterChoices = {
+        // these are the arrays of races and stats (classes)
         races: [
             {
                 title: 'Dwarf',
@@ -102,6 +103,7 @@ $(function() {
                 picture: "./images/Images/race_tiefling.svg"
             },
         ],
+        // the stats relate to the classes in D&D
         stats: [
             {
                 title: 'barbarian',
@@ -190,14 +192,12 @@ $(function() {
         ]
 
     };
-    $('a').smoothScroll({
-    
-    });
-
+    $('a').smoothScroll();
+    // this toggles the classes for the labels to keep the hover color when clicked
     $('.toggle').on('click', function(e) {
         $(this).toggleClass('labelTwo')
     });
-
+    //beginning of the code for the races
     $('form.race a').on('click', function(e) {
         var height = $('input[name=height]:checked').val(); 
         var age = $('input[name=age]:checked').val();
@@ -209,6 +209,7 @@ $(function() {
         ultimateRaceChoice = choiceObject.ultimateRaceChoice;
         ultimateChoiceRace(ultimateRaceChoice, raceChoices);
     });
+    //this function is to find the race that best represent your answers
     function finalRaceChoice(age, height, terrain, raceChoices, ultimateRaceChoice){
         for (i = 0; i < characterChoices['races'].length; i++){
             var ageOfCharacter = characterChoices['races'][i]['age'];
@@ -228,6 +229,7 @@ $(function() {
         console.log(ultimateRaceChoice, raceChoices);
         return {raceChoices: raceChoices, ultimateRaceChoice: ultimateRaceChoice};
     };
+    //this will tell the application to only display the perfect race choice
     function ultimateChoiceRace(ultimateRaceChoice, raceChoices){
         if (ultimateRaceChoice.length === 1){
             raceChoice = ultimateRaceChoice[0];
@@ -239,6 +241,7 @@ $(function() {
             $('div.raceResult').html(`<img src="${urlPicture}" class='racePicture'><h2 class='race'>${raceChoice}</h2>`).addClass('result');
         };
     };
+    //if 2 or more races are possible based on answers it will only display a single random choice from your possible races
     function getRandomResult(array){
         var randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
@@ -260,7 +263,7 @@ $(function() {
             }
         }
     };
-
+    //this is the beginning of the stats code
     $('form.stats a').on('click', function(e){
         var ability = $('input[name=ability]:checked').val();
         var combatType = $('input[name=combatType]:checked').val();
@@ -270,6 +273,7 @@ $(function() {
         statsChoices = finalStatSelection;
         raceClassResults(statsChoices);
     });
+    //this will figure out your best class based on your answers
     function finalStatsChoices(ability, combatType, hitDie, statsChoices){
         for (i = 0; i < characterChoices['stats'].length; i++){
             var abilityOfCharacter = characterChoices['stats'][i]['ability'];
@@ -287,6 +291,7 @@ $(function() {
         };
         return statsChoices;
     };
+    //if no class is matched it will pick from the ideal classes in the race array
     function raceClassResults(statsChoices){
         if (statsChoices.length < 1){  
             
