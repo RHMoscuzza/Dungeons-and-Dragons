@@ -196,16 +196,20 @@ $(function() {
 
     $('.toggle').on('click', function(e) {
         $(this).toggleClass('labelTwo')
-    })
-    
+    });
+
     $('form.race a').on('click', function(e) {
-        e.preventDefault();
-        var height = $('input[name=height]:checked').val();	
+        var height = $('input[name=height]:checked').val(); 
         var age = $('input[name=age]:checked').val();
         var terrain = $('input[name=vacation]:checked').val();
         var raceChoices = [];
         var ultimateRaceChoice = [];
-
+        var choiceObject = finalRaceChoice(age, height, terrain, raceChoices, ultimateRaceChoice);
+        raceChoices = choiceObject.raceChoices;
+        ultimateRaceChoice = choiceObject.ultimateRaceChoice;
+        ultimateChoiceRace(ultimateRaceChoice, raceChoices);
+    });
+    function finalRaceChoice(age, height, terrain, raceChoices, ultimateRaceChoice){
         for (i = 0; i < characterChoices['races'].length; i++){
             var ageOfCharacter = characterChoices['races'][i]['age'];
             var heightOfCharacter = characterChoices['races'][i]['height'];
@@ -219,39 +223,54 @@ $(function() {
                 raceChoices.push(raceOfCharacter);
             } else if (heightOfCharacter === height && terrainOfCharacter === terrain){
                 raceChoices.push(raceOfCharacter);
+            }
+        };
+        console.log(ultimateRaceChoice, raceChoices);
+        return {raceChoices: raceChoices, ultimateRaceChoice: ultimateRaceChoice};
+    };
+    function ultimateChoiceRace(ultimateRaceChoice, raceChoices){
+        if (ultimateRaceChoice.length === 1){
+            raceChoice = ultimateRaceChoice[0];
+            var urlPicture = pictureTitleFind(raceChoice, 'race');
+            $('div.raceResult').html(`<img src="${urlPicture}" class='racePicture'><h2 class='race'>${raceChoice}</h2>`).addClass('result');
+        } else {  
+            raceChoice = getRandomResult(raceChoices);
+            var urlPicture = pictureTitleFind(raceChoice, 'race');
+            $('div.raceResult').html(`<img src="${urlPicture}" class='racePicture'><h2 class='race'>${raceChoice}</h2>`).addClass('result');
         };
     };
     function getRandomResult(array){
         var randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
     };
-    function pictureTitleFind(title){
-        
-        for(i = 0; i < characterChoices['races'].length; i++){
-            var raceObject = characterChoices['races'][i];
-            if (title === characterChoices['races'][i]['title']){
-                return characterChoices['races'][i]['picture'];
+    function pictureTitleFind(title, category){
+        if (category === 'race'){    
+            for(i = 0; i < characterChoices['races'].length; i++){
+                var raceObject = characterChoices['races'][i];
+                if (title === characterChoices['races'][i]['title']){
+                    return characterChoices['races'][i]['picture'];
+                }
+            }
+        } else {
+            for(i = 0; i < characterChoices['stats'].length; i++){
+                    var statsObject = characterChoices['stats'][i];
+                    if (title === characterChoices['stats'][i]['title']){
+                        return characterChoices['stats'][i]['picture'];
+                }
             }
         }
     };
-    if (ultimateRaceChoice.length === 1){
-        raceChoice = ultimateRaceChoice[0];
-        var urlPicture = pictureTitleFind(raceChoice);
-        $('div.raceResult').html(`<img src="${urlPicture}" class='racePicture'><h2 class='race'>${raceChoice}</h2>`).addClass('result');
-    } else {  
-        raceChoice = getRandomResult(raceChoices);
-        var urlPicture = pictureTitleFind(raceChoice);
-        $('div.raceResult').html(`<img src="${urlPicture}" class='racePicture'><h2 class='race'>${raceChoice}</h2>`).addClass('result');
-    };
 
-    });
     $('form.stats a').on('click', function(e){
-        e.preventDefault();
         var ability = $('input[name=ability]:checked').val();
         var combatType = $('input[name=combatType]:checked').val();
         var hitDie = $('input[name=hitDie]:checked').val();
         var statsChoices = [];
-
+        var finalStatSelection = finalStatsChoices(ability, combatType, hitDie, statsChoices);
+        statsChoices = finalStatSelection;
+        raceClassResults(statsChoices);
+    });
+    function finalStatsChoices(ability, combatType, hitDie, statsChoices){
         for (i = 0; i < characterChoices['stats'].length; i++){
             var abilityOfCharacter = characterChoices['stats'][i]['ability'];
             var hitDieOfCharacter = characterChoices['stats'][i]['hitDie'];
@@ -266,19 +285,9 @@ $(function() {
                 statsChoices.push(statsOfCharacter);
             };
         };
-        function getRandomResult(array){
-            var randomIndex = Math.floor(Math.random() * array.length);
-            return array[randomIndex];
-        };
-        function pictureTitleFind(title){
-            title = title.toLowerCase();
-            for(i = 0; i < characterChoices['stats'].length; i++){
-                    var statsObject = characterChoices['stats'][i];
-                    if (title === characterChoices['stats'][i]['title']){
-                        return characterChoices['stats'][i]['picture'];
-                    }
-            }
-        };
+        return statsChoices;
+    };
+    function raceClassResults(statsChoices){
         if (statsChoices.length < 1){  
             
             var idealArray = characterChoices.races.filter(function(value){
@@ -287,12 +296,12 @@ $(function() {
             console.log(idealArray);
 
             var statsChoice = getRandomResult(idealArray[0].idealClass);
-            var urlPicture = pictureTitleFind(statsChoice);
+            var urlPicture = pictureTitleFind(statsChoice, 'stats');
             $('.statsResult').html(`<img src="${urlPicture}" class='racePicture'><h2>${statsChoice}</h2><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=I%20got%20${raceChoice}%20${statsChoice}%20on%20Dungeons%20and%20Dragons%20Character%20Picker" data-size="large"><i class="fa fa-twitter"></i></a>`).addClass('result');
         } else {
             var statsChoice = getRandomResult(statsChoices);
-            var urlPicture = pictureTitleFind(statsChoice);
+            var urlPicture = pictureTitleFind(statsChoice, 'stats');
             $('.statsResult').html(`<img src="${urlPicture}" class='racePicture'><h2>${statsChoice}</h2><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=I%20got%20${raceChoice}%20${statsChoice}%20on%20Dungeons%20and%20Dragons%20Character%20Picker" data-size="large"><i class="fa fa-twitter"></i></a>`).addClass('result');
         }
-    });
+    }
 });
